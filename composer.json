@@ -8,5 +8,9 @@
     "require-dev": {
         "squizlabs/php_codesniffer": "1.4.*"
     },
-    "minimum-stability": "beta"
+    "minimum-stability": "beta",
+    "autoload": {
+        "psr-0": { "Bc\\Bundle\\Symfony2CodingStandardBundle": "" }
+    },
+    "target-dir": "Bc/Bundle/Symfony2CodingStandardBundle"
 }
