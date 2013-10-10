@@ -3,9 +3,10 @@
     "license":     "MIT",
     "type":        "symfony-bundle",
     "require": {
-        "symfony/symfony": "2.3.0"
+        "symfony/symfony": "~2.4"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "1.4.*"
-    }
+    },
+    "minimum-stability": "beta"
 }

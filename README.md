@@ -18,7 +18,10 @@ Compatiblity
     <th>BcSymfony2CodingStandardBundle</th><th>Symfony</th>
   </tr>
   <tr>
-    <td>0.1.*</td><td>2.3.*</td>
+    <td><code>0.1.*</code></td><td><code>2.3.*</code></td>
+  </tr>
+  <tr>
+    <td><code>master</code></td><td><code>2.4.*</code></td>
   </tr>
 </table>
 
@@ -30,7 +33,7 @@ First of all you have to add the bundle to your `composer.json`:
 
     {
         "require": {
-            "braincrafted/symfony2cs-bundle": "0.1.*"
+            "braincrafted/symfony2cs-bundle": "dev-master"
         }
     }
 
@@ -79,8 +82,6 @@ However, things get even better if you add the script handler that is included i
         ]
     },
     ...
-
-_The `composer.json` above is based on [Symfony 2.3.*](https://github.com/symfony/symfony-standard/blob/2.3/composer.json)._
 
 
 Usage

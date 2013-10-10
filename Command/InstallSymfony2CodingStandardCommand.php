@@ -10,7 +10,7 @@
 
 namespace Bc\Bundle\Symfony2CodingStandardBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -28,8 +28,22 @@ use Symfony\Component\Process\Process;
  *
  * @codeCoverageIgnore
  */
-class InstallSymfony2CodingStandardCommand extends ContainerAwareCommand
+class InstallSymfony2CodingStandardCommand extends Command
 {
+    /** @var string */
+    private $rootDir;
+
+    /**
+     * Constructor.
+     *
+     * @param string $rootDir Root directory
+     */
+    public function __construct($rootDir)
+    {
+        $this->rootDir = $rootDir;
+        parent::__construct();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -43,7 +57,7 @@ class InstallSymfony2CodingStandardCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $vendorDir = sprintf('%s/../vendor', $this->getContainer()->getParameter('kernel.root_dir'));
+        $vendorDir = sprintf('%s/../vendor', $this->rootDir);
         $codeSnifferDir = sprintf('%s/squizlabs/php_codesniffer', $vendorDir);
 
         if (false === file_exists($codeSnifferDir)) {
