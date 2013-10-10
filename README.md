@@ -10,6 +10,19 @@ Author
 - [Florian Eckerstorfer](http://florian.ec)
 
 
+Compatiblity
+------------
+
+<table>
+  <tr>
+    <th>BcSymfony2CodingStandardBundle</th><th>Symfony</th>
+  </tr>
+  <tr>
+    <td>0.1.*</td><td>2.3.*</td>
+  </tr>
+</table>
+
+
 Installation
 ------------
 
@@ -17,7 +30,7 @@ First of all you have to add the bundle to your `composer.json`:
 
     {
         "require": {
-            "braincrafted/symfony2cs-bundle": "dev-master"
+            "braincrafted/symfony2cs-bundle": "0.1.*"
         }
     }
 

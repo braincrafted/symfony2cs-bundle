@@ -2,6 +2,9 @@
     "name":        "braincrafted/symfony2cs-bundle",
     "license":     "MIT",
     "type":        "symfony-bundle",
+    "require": {
+        "symfony/symfony": "2.3.0"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "1.4.*"
     }
