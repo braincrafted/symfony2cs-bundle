@@ -21,6 +21,9 @@ Compatiblity
     <td><code>0.1.*</code></td><td><code>2.3.*</code></td>
   </tr>
   <tr>
+      <td><code>0.2.*</code></td><td><code>2.4.*</code></td>
+  </tr>
+  <tr>
     <td><code>master</code></td><td><code>2.4.*</code></td>
   </tr>
 </table>
@@ -101,6 +104,14 @@ If you should encounter problem add the `--verbose` option to the command to vie
 
     php app/console braincrafted:symfony2cs:install --verbose
 
+
+Changelog
+---------
+
+### Version 0.2 (2013-11-14)
+
+- Changed namespace from `Bc` to `Braincrafted`
+- Support for Symfony 2.4
 
 License
 -------
