@@ -10,7 +10,7 @@
     },
     "minimum-stability": "beta",
     "autoload": {
-        "psr-0": { "Bc\\Bundle\\Symfony2CodingStandardBundle": "" }
+        "psr-0": { "Braincrafted\\Bundle\\Symfony2CSBundle": "" }
     },
-    "target-dir": "Bc/Bundle/Symfony2CodingStandardBundle"
+    "target-dir": "Braincrafted/Bundle/Symfony2CSBundle"
 }

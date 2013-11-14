@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of BcSymfony2CodingStandardBundle.
+ * This file is part of BraincraftedSymfony2CSBundle.
  *
  * (c) 2013 Florian Eckerstorfer <florian@eckerstorfer.co>
  *
@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bc\Bundle\Symfony2CodingStandardBundle\DependencyInjection;
+namespace Braincrafted\Bundle\Symfony2CSBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -18,13 +18,13 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * BcSymfony2CodingStandardExtension
  *
- * @package    BcSymfony2CodingStandardBundle
+ * @package    BraincraftedSymfony2CSBundle
  * @subpackage DependencyInjection
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
  */
-class BcSymfony2CodingStandardExtension extends Extension
+class BraincraftedSymfony2CSExtension extends Extension
 {
     /**
      * {@inheritDoc}

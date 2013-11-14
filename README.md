@@ -1,7 +1,7 @@
-BcSymfony2CodingStandardBundle
-==============================
+BraincraftedSymfony2CSBundle
+============================
 
-Sadly [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) does not contain the [Symfony2 coding standard](https://github.com/opensky/Symfony2-coding-standard) and is also not extensible. When you want to install PHP_CodeSniffer using Composer you have to install the coding standard manually whenever PHP_CodeSniffer is updated. Until now.
+Unfortunately [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) does not contain the [Symfony2 coding standard](https://github.com/opensky/Symfony2-coding-standard) and is not extensible. If you want to install PHP_CodeSniffer using Composer you have to install the coding standard manually everytime PHP_CodeSniffer is updated. Until now.
 
 
 Author
@@ -15,7 +15,7 @@ Compatiblity
 
 <table>
   <tr>
-    <th>BcSymfony2CodingStandardBundle</th><th>Symfony</th>
+    <th>BraincraftedSymfony2CSBundle</th><th>Symfony</th>
   </tr>
   <tr>
     <td><code>0.1.*</code></td><td><code>2.3.*</code></td>
@@ -29,7 +29,7 @@ Compatiblity
 Installation
 ------------
 
-First of all you have to add the bundle to your `composer.json`:
+First you have to add the bundle to your `composer.json`:
 
     {
         "require": {
@@ -37,7 +37,7 @@ First of all you have to add the bundle to your `composer.json`:
         }
     }
 
-And then you have to add the bundle to your `AppKernel.php`.
+Next you have to add the bundle to your `AppKernel.php`:
 
     // AppKernel.php
 
@@ -47,7 +47,7 @@ And then you have to add the bundle to your `AppKernel.php`.
         {
             $bundles = array(
                 // ...
-                new Bc\Bundle\Symfony2CodingStandardBundle\BcSymfony2CodingStandardBundle(),
+                new Braincrafted\Bundle\Symfony2CSBundle\BraincraftedSymfony2CSBundle(),
             );
 
             // ...
@@ -56,11 +56,11 @@ And then you have to add the bundle to your `AppKernel.php`.
         }
     }
 
-Now you can execute the `bc:symfony2cs:install` command to install coding standard:
+You can now execute the `braincrafted:symfony2cs:install` command to install the Symfony2 coding standard:
 
-    php app/console bc:symfony2cs:install
+    php app/console braincrafted:symfony2cs:install
 
-However, things get even better if you add the script handler that is included in the bundle to the `post-install-cmd` and `post-update-cmd` sections in your `composer.json`:
+However, things get better if you add the script handler that is included in the bundle to the `post-install-cmd` and `post-update-cmd` sections of your `composer.json`:
 
     ...
     "scripts": {
@@ -70,7 +70,7 @@ However, things get even better if you add the script handler that is included i
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Bc\\Bundle\\Symfony2CodingStandardBundle\\Composer\\ScriptHandler::installSymfony2CodingStandards"
+            "Braincrafted\\Bundle\\Symfony2CSBundle\\Composer\\ScriptHandler::installSymfony2CS"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -78,7 +78,7 @@ However, things get even better if you add the script handler that is included i
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Bc\\Bundle\\Symfony2CodingStandardBundle\\Composer\\ScriptHandler::installSymfony2CodingStandards"
+            "Braincrafted\\Bundle\\Symfony2CSBundle\\Composer\\ScriptHandler::installSymfony2CS"
         ]
     },
     ...
@@ -87,9 +87,9 @@ However, things get even better if you add the script handler that is included i
 Usage
 -----
 
-When you add the script handler to the `post-install-cmd` and `post-update-cmd` sections of your `composer.json` the bundle will install or update the coding standard whenever you run `composer install` and `composer update`.
+If you add the script handler to the `post-install-cmd` and `post-update-cmd` sections of your `composer.json` the bundle will install or update the coding standard everytime you run `composer install` or `composer update`.
 
-You can now use the Symfony2 coding standard when you run PHP_CodeSniffer:
+You can use the Symfony2 coding standard when you run PHP_CodeSniffer:
 
     ./bin/phpcs --standard=Symfony2 ./src/
 
@@ -97,9 +97,9 @@ You can now use the Symfony2 coding standard when you run PHP_CodeSniffer:
 Error handling
 --------------
 
-If you should encounter problem, add the `--verbose` option to the command to view the output of the executed commands.
+If you should encounter problem add the `--verbose` option to the command to view the output of the executed commands.
 
-    php app/console bc:symfony2cs:install --verbose
+    php app/console braincrafted:symfony2cs:install --verbose
 
 
 License

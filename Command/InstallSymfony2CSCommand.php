@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of BcSymfony2CodingStandardBundle.
+ * This file is part of BraincraftedSymfony2CSBundle.
  *
  * (c) 2013 Florian Eckerstorfer <florian@eckerstorfer.co>
  *
@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bc\Bundle\Symfony2CodingStandardBundle\Command;
+namespace Braincrafted\Bundle\Symfony2CSBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -20,7 +20,7 @@ use Symfony\Component\Process\Process;
 /**
  * InstallSymfony2CodingStandardCommand
  *
- * @package    BcSymfony2CodingStandardBundle
+ * @package    BraincraftedSymfony2CSBundle
  * @subpackage Command
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
@@ -28,7 +28,7 @@ use Symfony\Component\Process\Process;
  *
  * @codeCoverageIgnore
  */
-class InstallSymfony2CodingStandardCommand extends Command
+class InstallSymfony2CSCommand extends Command
 {
     /** @var string */
     private $rootDir;
@@ -49,7 +49,7 @@ class InstallSymfony2CodingStandardCommand extends Command
      */
     protected function configure()
     {
-        $this->setName('bc:symfony2cs:install');
+        $this->setName('braincrafted:symfony2cs:install');
     }
 
     /**

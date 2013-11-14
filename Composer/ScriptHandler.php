@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of BcSymfony2CodingStandardBundle.
+ * This file is part of BraincraftedSymfony2CSBundle.
  *
  * (c) 2013 Florian Eckerstorfer <florian@eckerstorfer.co>
  *
@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bc\Bundle\Symfony2CodingStandardBundle\Composer;
+namespace Braincrafted\Bundle\Symfony2CSBundle\Composer;
 
 use Symfony\Component\ClassLoader\ClassCollectionLoader;
 use Symfony\Component\Process\Process;
@@ -18,7 +18,7 @@ use Composer\Script\CommandEvent;
 /**
  * ScriptHandler
  *
- * @package    BcSymfony2CodingStandardBundle
+ * @package    BraincraftedSymfony2CSBundle
  * @subpackage Composer
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
@@ -29,9 +29,9 @@ use Composer\Script\CommandEvent;
 class ScriptHandler
 {
     /**
-     * @param CommandEvent $event [description]
+     * @param CommandEvent $event
      */
-    public static function installSymfony2CodingStandards(CommandEvent $event)
+    public static function installSymfony2CS(CommandEvent $event)
     {
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
@@ -48,9 +48,19 @@ class ScriptHandler
             return;
         }
 
-        static::executeCommand($event, $appDir, 'bc:symfony2cs:install', $options['process-timeout']);
+        static::executeCommand($event, $appDir, 'braincrafted:symfony2cs:install', $options['process-timeout']);
     }
 
+    /**
+     * @param CommandEvent $event
+     * @param string       $appDir
+     * @param string       $cmd
+     * @param integer      $timeout
+     *
+     * @return void
+     *
+     * @throws \RunTimeException when an error occurred when executing the command
+     */
     protected static function executeCommand(CommandEvent $event, $appDir, $cmd, $timeout = 300)
     {
         $php = escapeshellarg(self::getPhp());
@@ -70,6 +80,11 @@ class ScriptHandler
         }
     }
 
+    /**
+     * @param CommandEvent $event
+     *
+     * @return array
+     */
     protected static function getOptions(CommandEvent $event)
     {
         $options = array_merge(array(
@@ -85,6 +100,9 @@ class ScriptHandler
         return $options;
     }
 
+    /**
+     * @return string Path to php executable
+     */
     protected static function getPhp()
     {
         $phpFinder = new PhpExecutableFinder;
