@@ -34,37 +34,44 @@ Installation
 
 First you have to add the bundle to your `composer.json`:
 
-    {
-        "require": {
-            "braincrafted/symfony2cs-bundle": "dev-master"
-        }
+```json
+{
+    "require": {
+        "braincrafted/symfony2cs-bundle": "dev-master"
     }
+}
+```
 
 Next you have to add the bundle to your `AppKernel.php`:
 
-    // AppKernel.php
+```php
+// AppKernel.php
 
-    class AppKernel extends Kernel
+class AppKernel extends Kernel
+{
+    public function registerBundles()
     {
-        public function registerBundles()
-        {
-            $bundles = array(
-                // ...
-                new Braincrafted\Bundle\Symfony2CSBundle\BraincraftedSymfony2CSBundle(),
-            );
-
+        $bundles = array(
             // ...
+            new Braincrafted\Bundle\Symfony2CSBundle\BraincraftedSymfony2CSBundle(),
+        );
 
-            return $bundles;
-        }
+        // ...
+
+        return $bundles;
     }
+}
+```
 
 You can now execute the `braincrafted:symfony2cs:install` command to install the Symfony2 coding standard:
 
-    php app/console braincrafted:symfony2cs:install
+```bash
+$ php app/console braincrafted:symfony2cs:install
+```
 
 However, things get better if you add the script handler that is included in the bundle to the `post-install-cmd` and `post-update-cmd` sections of your `composer.json`:
 
+```json
     ...
     "scripts": {
         "post-install-cmd": [
@@ -85,7 +92,7 @@ However, things get better if you add the script handler that is included in the
         ]
     },
     ...
-
+```
 
 Usage
 -----
@@ -94,16 +101,18 @@ If you add the script handler to the `post-install-cmd` and `post-update-cmd` se
 
 You can use the Symfony2 coding standard when you run PHP_CodeSniffer:
 
-    ./bin/phpcs --standard=Symfony2 ./src/
-
+```bash
+$ ./bin/phpcs --standard=Symfony2 ./src/
+```
 
 Error handling
 --------------
 
 If you should encounter problem add the `--verbose` option to the command to view the output of the executed commands.
 
-    php app/console braincrafted:symfony2cs:install --verbose
-
+```bash
+$ php app/console braincrafted:symfony2cs:install --verbose
+```
 
 Changelog
 ---------
