@@ -126,3 +126,7 @@ License
 -------
 
 The bundle is licensed under The MIT License. See the `LICENSE` file for more information.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/braincrafted/symfony2cs-bundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
