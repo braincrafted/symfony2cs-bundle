@@ -1,13 +1,14 @@
 BraincraftedSymfony2CSBundle
 ============================
 
-Unfortunately [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) does not contain the [Symfony2 coding standard](https://github.com/opensky/Symfony2-coding-standard) and is not extensible. If you want to install PHP_CodeSniffer using Composer you have to install the coding standard manually everytime PHP_CodeSniffer is updated. Until now.
+Unfortunately [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) does not contain the [Symfony2 coding standard](https://github.com/florianeckerstorfer/Symfony2-coding-standard) and is not extensible. If you want to install PHP_CodeSniffer using Composer you have to install the coding standard manually everytime PHP_CodeSniffer is updated. Until now.
 
 
 Author
 ------
 
-- [Florian Eckerstorfer](http://florian.ec)
+- [Florian Eckerstorfer](https://florian.ec) ([Twitter](https://twitter.com/Florian_))
+- Get updates on my open source projects by following [@braincrafted](https://twitter.com/braincrafted) on Twitter.
 
 
 Compatiblity
@@ -117,7 +118,11 @@ $ php app/console braincrafted:symfony2cs:install --verbose
 Changelog
 ---------
 
-### Version 0.2 (2013-11-14)
+### Version 0.2.1 (27 August 2014)
+
+- Updated path to coding standard repo (the original is gone)
+
+### Version 0.2 (14 November 2013)
 
 - Changed namespace from `Bc` to `Braincrafted`
 - Support for Symfony 2.4
@@ -126,7 +131,3 @@ License
 -------
 
 The bundle is licensed under The MIT License. See the `LICENSE` file for more information.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/braincrafted/symfony2cs-bundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
