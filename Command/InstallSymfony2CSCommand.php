@@ -64,7 +64,7 @@ class InstallSymfony2CSCommand extends Command
             $output->writeln('<error>Could not find squizlabs/php_codesniffer. Is it installed?</error>');
         }
 
-        $command = 'git clone git://github.com/opensky/Symfony2-coding-standard.git Symfony2';
+        $command = 'git clone git@github.com:florianeckerstorfer/Symfony2-coding-standard.git Symfony2';
         $cwd = sprintf('%s/CodeSniffer/Standards', $codeSnifferDir);
         $update = false;
 
